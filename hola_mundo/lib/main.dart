@@ -8,25 +8,46 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      title: 'Contador',
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  //aqui toda la logica es como el void main
+ int _contador = 0;
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Contador"),
+        centerTitle: true,
+       
+      ),
+     body: Center(
+      child: Text("Tu has presionado el boton $_contador veces")
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          // aqui la logica
+          _contador = _contador + 1;
+          setState(() {
+            
+          });
+        },
+         child: Icon(Icons.add_box), 
+      ),
+    );
+    
   }
 }
 
@@ -43,4 +64,3 @@ class _MyWidgetState extends State<MyWidget> {
     return const Placeholder();
   }
 }
-//up git
