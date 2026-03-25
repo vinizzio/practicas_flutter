@@ -1,6 +1,6 @@
 import 'package:componentes/screens/filas_screen.dart';
 import 'package:componentes/screens/imagnes_screen..dart';
-import 'package:componentes/screens/tablas_screen.dart';
+import 'package:componentes/screens/listas_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/screens/columns_screen.dart';
 
@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 12),
             _buildMenuCard(
               context: context,
-              title: 'Tablas',
+              title: 'Listas',
               subtitle: 'Muestra cómo se construyen tablas en Flutter.',
               icon: Icons.table_chart_outlined,
               iconColor: const Color(0xFF1E88E5),
@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const TablasScreen(),
+                    builder: (context) => const ListasScreen(),
                   ),
                 );
               },
@@ -216,3 +216,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+// columnas, filas contenedores, imagenes, listas , navegacion textos

@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "componentes",
+            "cwd": "componentes",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs" : [
+                "--web-browser-flag=--disable-web-security",
+            ]
+        },
+        {
+            "name": "componentes (profile mode)",
+            "cwd": "componentes",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "componentes (release mode)",
+            "cwd": "componentes",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "hola_mundo",
+            "cwd": "hola_mundo",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "hola_mundo (profile mode)",
+            "cwd": "hola_mundo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "hola_mundo (release mode)",
+            "cwd": "hola_mundo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
