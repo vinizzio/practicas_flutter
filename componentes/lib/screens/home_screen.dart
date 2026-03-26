@@ -26,129 +26,131 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            _buildMenuCard(
-              context: context,
-              title: 'Columnas',
-              subtitle: 'Muestra cómo se construyen las columnas en Flutter.',
-              icon: Icons.view_column_outlined,
-              iconColor: const Color(0xFF0D47A1),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ColumnsScreen(),
-                  ),
-                );
-              },
-            ),
-            ///listas
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              _buildMenuCard(
+                context: context,
+                title: 'Columnas',
+                subtitle: 'Muestra cómo se construyen las columnas en Flutter.',
+                icon: Icons.view_column_outlined,
+                iconColor: const Color(0xFF0D47A1),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ColumnsScreen(),
+                    ),
+                  );
+                },
+              ),
+              ///listas
+              const SizedBox(height: 12),
+              _buildMenuCard(
+                context: context,
+                title: 'Filas',
+                subtitle: 'Muestra cómo se construyen las filas en Flutter.',
+                icon: Icons.view_stream_outlined,
+                iconColor: const Color(0xFF1565C0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FilasScreen(),
+                    ),
+                  );
+                },
+              ),
+              /// container - contenedores
+               const SizedBox(height: 12),
+              _buildMenuCard(
+                context: context,
+                title: 'Contenedores',
+                subtitle: 'Muestra cómo se construyen los contenedores en Flutter.',
+                icon: Icons.view_stream_outlined,
+                iconColor: const Color(0xFF1565C0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContenedorScreen(),
+                    ),
+                  );
+                },
+              ),
+        
+              /// imagenes
+              const SizedBox(height: 12),
+              _buildMenuCard(
+                context: context,
+                title: 'Imágenes',
+                subtitle: 'Muestra cómo se visualizan imágenes en Flutter.',
+                icon: Icons.image_outlined,
+                iconColor: const Color(0xFF1976D2),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ImagenesScreen(),
+                    ),
+                  );
+                },
+              ),
+              ///listas
+              const SizedBox(height: 12),
+              _buildMenuCard(
+                context: context,
+                title: 'Listas',
+                subtitle: 'Muestra cómo se construyen las listas en Flutter.',
+                icon: Icons.table_chart_outlined,
+                iconColor: const Color(0xFF1E88E5),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ListasScreen(),
+                    ),
+                  );
+                },
+              ),
+              /// Navegacion
+              const SizedBox(height: 12),
+              _buildMenuCard(
+                context: context,
+                title: 'Navegacion',
+                subtitle: 'Muestra cómo navega en Flutter.',
+                icon: Icons.view_stream_outlined,
+                iconColor: const Color(0xFF1565C0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FilasScreen(),
+                    ),
+                  );
+                },
+              ),
+            /// layout demo
             const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Filas',
-              subtitle: 'Muestra cómo se construyen las filas en Flutter.',
-              icon: Icons.view_stream_outlined,
-              iconColor: const Color(0xFF1565C0),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FilasScreen(),
-                  ),
-                );
-              },
-            ),
-            /// container - contenedores
-             const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Contenedores',
-              subtitle: 'Muestra cómo se construyen los contenedores en Flutter.',
-              icon: Icons.view_stream_outlined,
-              iconColor: const Color(0xFF1565C0),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ContenedorScreen(),
-                  ),
-                );
-              },
-            ),
-
-            /// imagenes
-            const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Imágenes',
-              subtitle: 'Muestra cómo se visualizan imágenes en Flutter.',
-              icon: Icons.image_outlined,
-              iconColor: const Color(0xFF1976D2),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ImagenesScreen(),
-                  ),
-                );
-              },
-            ),
-            ///listas
-            const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Listas',
-              subtitle: 'Muestra cómo se construyen las listas en Flutter.',
-              icon: Icons.table_chart_outlined,
-              iconColor: const Color(0xFF1E88E5),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ListasScreen(),
-                  ),
-                );
-              },
-            ),
-            /// Navegacion
-            const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Navegacion',
-              subtitle: 'Muestra cómo navega en Flutter.',
-              icon: Icons.view_stream_outlined,
-              iconColor: const Color(0xFF1565C0),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FilasScreen(),
-                  ),
-                );
-              },
-            ),
-          /// layout demo
-          const SizedBox(height: 12),
-            _buildMenuCard(
-              context: context,
-              title: 'Layout',
-              subtitle: 'Muestra cómo navega en Flutter.',
-              icon: Icons.view_stream_outlined,
-              iconColor: const Color(0xFF1565C0),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FlutterLayoutDemoScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
+              _buildMenuCard(
+                context: context,
+                title: 'Layout',
+                subtitle: 'Muestra cómo navega en Flutter.',
+                icon: Icons.view_stream_outlined,
+                iconColor: const Color(0xFF1565C0),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FlutterLayoutDemoScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
 
