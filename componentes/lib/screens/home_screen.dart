@@ -1,5 +1,7 @@
+import 'package:componentes/screens/contenedor_screen.dart';
 import 'package:componentes/screens/filas_screen.dart';
-import 'package:componentes/screens/imagnes_screen..dart';
+import 'package:componentes/screens/flutter_layout_demo_screen.dart';
+import 'package:componentes/screens/imagenes_screen.dart';
 import 'package:componentes/screens/listas_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/screens/columns_screen.dart';
@@ -43,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+            ///listas
             const SizedBox(height: 12),
             _buildMenuCard(
               context: context,
@@ -59,6 +62,25 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+            /// container - contenedores
+             const SizedBox(height: 12),
+            _buildMenuCard(
+              context: context,
+              title: 'Contenedores',
+              subtitle: 'Muestra cómo se construyen los contenedores en Flutter.',
+              icon: Icons.view_stream_outlined,
+              iconColor: const Color(0xFF1565C0),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContenedorScreen(),
+                  ),
+                );
+              },
+            ),
+
+            /// imagenes
             const SizedBox(height: 12),
             _buildMenuCard(
               context: context,
@@ -75,11 +97,12 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+            ///listas
             const SizedBox(height: 12),
             _buildMenuCard(
               context: context,
               title: 'Listas',
-              subtitle: 'Muestra cómo se construyen tablas en Flutter.',
+              subtitle: 'Muestra cómo se construyen las listas en Flutter.',
               icon: Icons.table_chart_outlined,
               iconColor: const Color(0xFF1E88E5),
               onTap: () {
@@ -87,6 +110,40 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ListasScreen(),
+                  ),
+                );
+              },
+            ),
+            /// Navegacion
+            const SizedBox(height: 12),
+            _buildMenuCard(
+              context: context,
+              title: 'Navegacion',
+              subtitle: 'Muestra cómo navega en Flutter.',
+              icon: Icons.view_stream_outlined,
+              iconColor: const Color(0xFF1565C0),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FilasScreen(),
+                  ),
+                );
+              },
+            ),
+          /// layout demo
+          const SizedBox(height: 12),
+            _buildMenuCard(
+              context: context,
+              title: 'Layout',
+              subtitle: 'Muestra cómo navega en Flutter.',
+              icon: Icons.view_stream_outlined,
+              iconColor: const Color(0xFF1565C0),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FlutterLayoutDemoScreen(),
                   ),
                 );
               },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FilasScreen extends StatelessWidget {
-  const FilasScreen({super.key});
+class ContenedorScreen extends StatelessWidget {
+  const ContenedorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class FilasScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color(0xFF0D47A1),
         title: Text(
-          "Filas",
+          "Contenedores",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -26,7 +26,7 @@ class FilasScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Que son las Filas",
+              "Que son los Contenedores",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

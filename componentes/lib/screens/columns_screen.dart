@@ -11,7 +11,7 @@ class ColumnsScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         backgroundColor: const Color(0xFF0D47A1),
-        title: const Text(
+        title: Text(
           "Columnas",
           style: TextStyle(
             fontWeight: FontWeight.bold,
