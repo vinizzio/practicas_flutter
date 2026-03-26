@@ -6,9 +6,15 @@ class ListasScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF4F6F8),
       appBar: AppBar(
-        title: Text("Listas"),
+        elevation: 0,
         centerTitle: true,
+        backgroundColor: const Color(0xFF0D47A1),
+        title: Text("Listas",
+        
+        ),
+        
       ),
        // body: ListView(
          // children: [

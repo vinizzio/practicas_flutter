@@ -3,6 +3,7 @@ import 'package:componentes/screens/filas_screen.dart';
 import 'package:componentes/screens/flutter_layout_demo_screen.dart';
 import 'package:componentes/screens/imagenes_screen.dart';
 import 'package:componentes/screens/listas_screen.dart';
+import 'package:componentes/screens/navegacion_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/screens/columns_screen.dart';
 
@@ -127,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const FilasScreen(),
+                      builder: (context) => const NavegacionScreen(),
                     ),
                   );
                 },
