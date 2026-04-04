@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tienda/screens/cart_screen.dart';
+import 'package:tienda/services/product_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,7 +51,12 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 8),
                 SizedBox(
                   width: 350,
-                  child: FilledButton(onPressed: () {}, child: Text("Añadir")),
+                  child: FilledButton(
+                    onPressed: () {
+                      ProductService().getProducts();
+                    },
+                    child: Text("Añadir"),
+                  ),
                 ),
                 SizedBox(height: 12),
               ],
