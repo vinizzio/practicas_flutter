@@ -19,16 +19,41 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: .center,
-        children: [
-          Text("COLECCIÓN 2024", style: TextStyle(letterSpacing: 3.0)),
-          Text(
-            "Diseño atemporal",
-            style: TextStyle(fontWeight: .bold, fontSize: 32),
-          ),
-          ProductCard(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: .center,
+          children: [
+            Text("COLECCIÓN 2024", style: TextStyle(letterSpacing: 3.0)),
+            Text(
+              "Diseño atemporal",
+              style: TextStyle(fontWeight: .bold, fontSize: 32),
+            ),
+            //ProductCard(),
+            FutureBuilder(
+              future: ProductService().getProducts(), 
+              builder: (context, snapshot) {
+                // snapshot -> Captura de la respuesta del future
+                // Controlar errores
+                if(snapshot.hasError) {
+                  return Text("Ha ocurrido un error");
+                }
+                if(!snapshot.hasData) {
+                  return Center(child: CircularProgressIndicator());
+                }
+                final data = snapshot.data ?? [];
+                return ListView.builder(
+                  itemBuilder: (context, index) {
+                    final producto = data[index];
+                    return ProductCard(product: producto,);
+                  },
+                  itemCount: data.length,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [

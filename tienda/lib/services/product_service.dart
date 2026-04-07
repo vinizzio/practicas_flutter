@@ -8,11 +8,10 @@ class ProductService {
     final response = await dio.get(
       "https://my-json-server.typicode.com/RicharC293/fake_doctors/products",
     );
-   //JSON - lista de ProductModel
- 
+    // JSON - lista de ProductModel
     final List<ProductModel> products = (response.data as List)
-        .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
-        .toList();
+    .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
+    .toList();
     return products;
   }
 }
