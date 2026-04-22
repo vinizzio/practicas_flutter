@@ -1,13 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tienda/notifier/cart_notifier.dart';
 import 'package:tienda/screens/home_screen.dart';
+import 'package:tienda/screens/login_screen.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+ 
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -15,9 +25,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CartNotifier()),
       ],
       child: MaterialApp(
-        title: 'Mi tienda',
+        title: "Mi tienda",
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: FirebaseAuth.instance.currentUser == null
+            ? const LoginScreen()
+            : const HomeScreen(),
       ),
     );
   }

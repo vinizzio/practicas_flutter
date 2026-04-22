@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tienda/screens/cart_screen.dart';
+import 'package:tienda/screens/profile_screen.dart';
 import 'package:tienda/services/product_service.dart';
 import 'package:tienda/widgets/product_card.dart';
 
@@ -13,9 +14,14 @@ class HomeScreen extends StatelessWidget {
         title: Text("Nuestra Tienda"),
         centerTitle: true,
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.account_circle_outlined),
+          IconButton(
+            onPressed: () {
+              final route = MaterialPageRoute(builder: (context) {
+                return ProfileScreen();
+              },);
+              Navigator.push(context, route);
+            },
+            icon: Icon(Icons.account_circle_outlined),
           ),
         ],
       ),
